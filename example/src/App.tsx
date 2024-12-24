@@ -22,6 +22,7 @@ import SystemUI from './screens/SystemUi';
 import OfflinePlayback from './screens/OfflinePlayback';
 import Casting from './screens/Casting';
 import BackgroundPlayback from './screens/BackgroundPlayback';
+import IkonikTest from './screens/IkonikTest';
 
 export type RootStackParamsList = {
   ExamplesList: {
@@ -30,6 +31,7 @@ export type RootStackParamsList = {
       routeName: keyof RootStackParamsList;
     }[];
   };
+  IkonikTest: undefined;
   BasicAds: undefined;
   BasicAnalytics: undefined;
   BasicPlayback: undefined;
@@ -86,6 +88,10 @@ export default function App() {
 
   const stackParams = {
     data: [
+      {
+        title: 'Ikonik Test',
+        routeName: 'IkonikTest' as keyof RootStackParamsList,
+      },
       {
         title: 'Basic playback',
         routeName: 'BasicPlayback' as keyof RootStackParamsList,
@@ -196,6 +202,11 @@ export default function App() {
           name="BasicAnalytics"
           component={BasicAnalytics}
           options={{ title: 'Basic Analytics' }}
+        />
+        <RootStack.Screen
+          name="IkonikTest"
+          component={IkonikTest}
+          options={{ title: 'Ikonik Test' }}
         />
         <RootStack.Screen
           name="BasicPlayback"
